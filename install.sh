@@ -5,9 +5,10 @@ set -e
 original_dir=$PWD
 
 # get MadGraph
-wget https://launchpad.net/mg5amcnlo/2.0/2.6.x/+download/MG5_aMC_v2.6.7.tar.gz
-tar -zxvf MG5_aMC_v2.6.7.tar.gz 
-mg_dir=${original_dir}/MG5_aMC_v2_6_7
+wget https://launchpad.net/mg5amcnlo/2.0/2.9.x/+download/MG5_aMC_v2.9.2.tar.gz
+tar -zxvf MG5_aMC_v2.9.2.tar.gz 
+rm MG5_aMC_v2.9.2.tar.gz
+mg_dir=${original_dir}/MG5_aMC_v2_9_2
 
 # get UFO models
 git clone https://:@gitlab.cern.ch:8443/lhc-dmwg-material/model-repository.git
@@ -24,7 +25,7 @@ cd ${run_dir}
 cat > tmp_install  << EOF
 install maddm
 EOF
-${mg_dir}/bin/mg5_aMC tmp_install
+python2 ${mg_dir}/bin/mg5_aMC tmp_install
 rm tmp_install
 
 echo "You can now run ../bin/maddm.py <yourscript>"
