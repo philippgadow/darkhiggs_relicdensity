@@ -1,12 +1,13 @@
 import model DarkHiggs2MDM
 define darkmatter n1
 generate relic_density
-output out_relicdensity_darkhiggs_mchi_200GeV
+output out_relicdensity_darkhiggs_mchi_100GeV
+
 
 # scan points of signal grid
 launch
 set MZP scan:[x for x in range(500,3100,100)]
-set MDM 200
+set MDM 100
 set MHs scan:[x for x in range(50,120,10)]
 set whs AUTO
 set wzp AUTO
