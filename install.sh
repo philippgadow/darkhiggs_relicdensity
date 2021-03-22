@@ -28,4 +28,5 @@ EOF
 python2 ${mg_dir}/bin/mg5_aMC tmp_install
 rm tmp_install
 
-echo "You can now run ../bin/maddm.py <yourscript>"
+cd $original_dir
+echo "You can now run cd ${run_dir} && ../bin/maddm.py <yourscript>"
